@@ -53,7 +53,7 @@ function generateQuestion(
   filteredEntries: [string, VerbData][],
 ): Question {
   const verbEntries = filteredEntries.length > 0 ? filteredEntries : allVerbEntries;
-  const commonCount = Math.min(50, verbEntries.length);
+  const commonCount = Math.min(200, verbEntries.length);
   const candidates: number[] = [];
   for (let i = 0; i < 10; i++) {
     if (Math.random() < 0.7) {

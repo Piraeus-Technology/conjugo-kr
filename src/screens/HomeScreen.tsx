@@ -6,9 +6,12 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
+  Animated,
   ScrollView,
 } from 'react-native';
+import { Swipeable } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
 import Fuse from 'fuse.js';
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -19,8 +22,7 @@ import { useHistoryStore } from '../store/historyStore';
 import { useFavoritesStore } from '../store/favoritesStore';
 import { romanToHangul } from '../utils/hangul';
 import type { RootStackParamList } from '../types/navigation';
-import type { VerbData } from '../utils/conjugate';
-import { getConjugationIndex } from '../utils/conjugate';
+import { conjugateReading, FORM_LABELS, ALL_FORMS, VerbData, ConjugationForm } from '../utils/conjugate';
 
 type NavProp = NativeStackNavigationProp<RootStackParamList>;
 
@@ -43,6 +45,48 @@ const fuse = new Fuse(searchData, {
   ignoreLocation: true,
 });
 
+// Lazy-built conjugation index
+interface ConjMatch {
+  verb: string;
+  translation: string;
+  form: ConjugationForm;
+  conjugated: string;
+}
+
+let conjugationIndex: ConjMatch[] | null = null;
+let conjFuse: Fuse<ConjMatch> | null = null;
+
+function getConjugationIndex(): ConjMatch[] {
+  if (conjugationIndex) return conjugationIndex;
+  conjugationIndex = [];
+  verbList.forEach(([verb, data]) => {
+    ALL_FORMS.forEach((form) => {
+      const conjugated = conjugateReading(verb, data, form);
+      conjugationIndex!.push({ verb, translation: data.translation, form, conjugated });
+    });
+  });
+  return conjugationIndex;
+}
+
+function getConjFuse(): Fuse<ConjMatch> {
+  if (conjFuse) return conjFuse;
+  conjFuse = new Fuse(getConjugationIndex(), {
+    keys: ['conjugated'],
+    threshold: 0.2,
+  });
+  return conjFuse;
+}
+
+interface SearchResult {
+  verb: string;
+  translation: string;
+  topik: string;
+  regular: boolean;
+  matchType: 'verb' | 'conjugation';
+  matchDetail?: string;
+  matchForm?: ConjugationForm;
+}
+
 function getVerbOfTheDay(): [string, VerbData] {
   const dayIndex = Math.floor(Date.now() / 86400000) % verbList.length;
   return verbList[dayIndex];
@@ -57,7 +101,7 @@ export default function HomeScreen() {
   const colors = useColors();
   const navigation = useNavigation<NavProp>();
   const { history, loadHistory, addToHistory, removeFromHistory } = useHistoryStore();
-  const { favorites, loadFavorites } = useFavoritesStore();
+  const { favorites, loadFavorites, toggleFavorite } = useFavoritesStore();
   const [query, setQuery] = useState('');
 
   useEffect(() => {
@@ -65,59 +109,107 @@ export default function HomeScreen() {
     loadFavorites();
   }, []);
 
-  const results = useMemo(() => {
+  const results = useMemo((): SearchResult[] => {
     if (!query.trim()) return [];
     const q = query.trim();
 
-    // Search with original query
-    const results1 = fuse.search(q);
+    // Convert romanized input to hangul
+    const hangulQuery = hasLatin(q) ? romanToHangul(q) : q;
 
-    // If query has Latin chars, also try romanized Korean search
-    let results2: typeof results1 = [];
-    if (hasLatin(q)) {
-      const hangulQuery = romanToHangul(q);
-      if (hangulQuery !== q) {
-        results2 = fuse.search(hangulQuery);
-      }
+    // Check for exact conjugation matches first
+    const exactConjMatches = getConjugationIndex().filter(
+      (c) => c.conjugated === hangulQuery || c.conjugated === q
+    );
+
+    const seen = new Set<string>();
+    const out: SearchResult[] = [];
+
+    if (exactConjMatches.length > 0) {
+      exactConjMatches.forEach((c) => {
+        if (!seen.has(c.verb)) {
+          seen.add(c.verb);
+          const label = FORM_LABELS[c.form];
+          const vData = (verbs as Record<string, VerbData>)[c.verb];
+          out.push({
+            verb: c.verb,
+            translation: c.translation,
+            topik: vData?.topik || '',
+            regular: vData?.regular ?? true,
+            matchType: 'conjugation',
+            matchDetail: `「${c.conjugated}」— ${label.ko} (${label.en})`,
+            matchForm: c.form,
+          });
+        }
+      });
     }
 
-    // Merge and deduplicate
-    const seen = new Set<string>();
-    const merged = [];
+    // Verb name/translation search
+    const results1 = fuse.search(q);
+    const results2 = hangulQuery !== q ? fuse.search(hangulQuery) : [];
     for (const r of [...results1, ...results2]) {
       if (!seen.has(r.item.verb)) {
         seen.add(r.item.verb);
-        merged.push(r);
+        out.push({
+          ...r.item,
+          matchType: 'verb',
+        });
       }
     }
 
-    // If few results and query looks Korean, try conjugation reverse lookup
-    if (merged.length < 5 && !hasLatin(q) && q.length >= 2) {
-      const index = getConjugationIndex(verbs as Record<string, VerbData>);
-      for (const entry of index) {
-        if (entry.conjugated === q && !seen.has(entry.verb)) {
-          seen.add(entry.verb);
-          const sd = searchData.find(s => s.verb === entry.verb);
-          if (sd) merged.push({ item: sd, refIndex: 0, score: 0.1 });
+    // Fuzzy conjugation matches (if no exact matches found)
+    if (exactConjMatches.length === 0) {
+      const conjResults = getConjFuse().search(hangulQuery || q);
+      conjResults.forEach((r) => {
+        if (!seen.has(r.item.verb)) {
+          seen.add(r.item.verb);
+          const label = FORM_LABELS[r.item.form];
+          const vData = (verbs as Record<string, VerbData>)[r.item.verb];
+          out.push({
+            verb: r.item.verb,
+            translation: r.item.translation,
+            topik: vData?.topik || '',
+            regular: vData?.regular ?? true,
+            matchType: 'conjugation',
+            matchDetail: `「${r.item.conjugated}」— ${label.ko} (${label.en})`,
+            matchForm: r.item.form,
+          });
         }
-      }
+      });
     }
 
-    return merged.slice(0, 20);
+    return out.slice(0, 20);
   }, [query]);
 
-  const handleVerbPress = useCallback((verb: string) => {
+  const handleVerbPress = useCallback((verb: string, highlightForm?: string) => {
     addToHistory(verb);
-    navigation.navigate('Conjugation', { verb });
+    navigation.navigate('Conjugation', { verb, highlightForm });
   }, [navigation]);
 
   const [vodVerb, vodData] = getVerbOfTheDay();
 
-  const renderVerbItem = ({ item }: { item: typeof searchData[0] }) => {
+  const renderDeleteAction = (
+    _progress: Animated.AnimatedInterpolation<number>,
+    dragX: Animated.AnimatedInterpolation<number>,
+  ) => {
+    const scale = dragX.interpolate({
+      inputRange: [-80, 0],
+      outputRange: [1, 0.5],
+      extrapolate: 'clamp',
+    });
+    return (
+      <View style={styles.deleteAction}>
+        <Animated.View style={{ transform: [{ scale }] }}>
+          <Ionicons name="trash-outline" size={20} color="#fff" />
+        </Animated.View>
+      </View>
+    );
+  };
+
+  const renderVerbItem = ({ item }: { item: SearchResult }) => {
     return (
       <TouchableOpacity
         style={[styles.resultItem, { backgroundColor: colors.card }]}
-        onPress={() => handleVerbPress(item.verb)}
+        onPress={() => handleVerbPress(item.verb, item.matchForm)}
         activeOpacity={0.7}
       >
         <View style={styles.resultLeft}>
@@ -127,6 +219,11 @@ export default function HomeScreen() {
           <Text style={[styles.resultTranslation, { color: colors.textSecondary }]} numberOfLines={1}>
             {item.translation}
           </Text>
+          {item.matchType === 'conjugation' && item.matchDetail && (
+            <Text style={[styles.matchDetail, { color: colors.primary }]} numberOfLines={1}>
+              {item.matchDetail}
+            </Text>
+          )}
           <View style={styles.tagRow}>
             <View style={[styles.tag, { backgroundColor: item.regular ? colors.regularTag : colors.irregularTag }]}>
               <Text style={[styles.tagText, { color: item.regular ? colors.regularTagText : colors.irregularTagText }]}>
@@ -142,6 +239,47 @@ export default function HomeScreen() {
     );
   };
 
+  const renderSwipeableRow = (verb: string, type: 'favorite' | 'history') => {
+    const data = (verbs as Record<string, VerbData>)[verb];
+    if (!data) return null;
+
+    const handleSwipeDelete = () => {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      if (type === 'favorite') {
+        toggleFavorite(verb);
+      } else {
+        removeFromHistory(verb);
+      }
+    };
+
+    return (
+      <Swipeable
+        key={verb + type}
+        renderRightActions={renderDeleteAction}
+        onSwipeableOpen={handleSwipeDelete}
+        overshootRight={false}
+      >
+        <TouchableOpacity
+          style={[styles.historyItem, { backgroundColor: colors.bg }]}
+          onPress={() => handleVerbPress(verb)}
+          activeOpacity={0.6}
+        >
+          <View style={styles.historyLeft}>
+            <Text style={[styles.historyVerb, { color: colors.textPrimary }]}>{verb}</Text>
+          </View>
+          <Text style={[styles.historyTranslation, { color: colors.textSecondary }]} numberOfLines={1}>
+            {data.translation}
+          </Text>
+          {type === 'favorite' ? (
+            <Ionicons name="heart" size={16} color={colors.accent} style={{ marginLeft: 8 }} />
+          ) : (
+            <Ionicons name="chevron-forward" size={16} color={colors.textMuted} style={{ marginLeft: 8 }} />
+          )}
+        </TouchableOpacity>
+      </Swipeable>
+    );
+  };
+
   return (
     <View style={[styles.container, { backgroundColor: colors.bg }]}>
       {/* Search bar */}
@@ -149,7 +287,7 @@ export default function HomeScreen() {
         <Ionicons name="search" size={18} color={colors.textMuted} />
         <TextInput
           style={[styles.searchInput, { color: colors.textPrimary }]}
-          placeholder="Search (한글, romanized, English)..."
+          placeholder="Search verbs (한글, romanized, English)..."
           placeholderTextColor={colors.textMuted}
           value={query}
           onChangeText={setQuery}
@@ -165,13 +303,16 @@ export default function HomeScreen() {
 
       {query.trim() ? (
         <FlatList
-          data={results.map((r) => r.item)}
-          keyExtractor={(item) => item.verb}
+          data={results}
+          keyExtractor={(item, i) => item.verb + item.matchType + i}
           renderItem={renderVerbItem}
           contentContainerStyle={styles.listContent}
+          ListEmptyComponent={
+            <Text style={[styles.emptyText, { color: colors.textMuted }]}>No matching verbs</Text>
+          }
         />
       ) : (
-        <ScrollView style={styles.homeContent} showsVerticalScrollIndicator={false}>
+        <ScrollView style={styles.homeContent}>
           {/* Verb of the Day */}
           <TouchableOpacity
             style={[styles.vodCard, { backgroundColor: colors.card }]}
@@ -186,66 +327,16 @@ export default function HomeScreen() {
           {/* Favorites */}
           {favorites.length > 0 && (
             <View style={styles.section}>
-              <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>
-                즐겨찾기 ({favorites.length})
-              </Text>
-              {favorites.slice(0, 5).map((verb) => {
-                const data = (verbs as Record<string, VerbData>)[verb];
-                if (!data) return null;
-                return (
-                  <TouchableOpacity
-                    key={verb}
-                    style={[styles.listItem, { backgroundColor: colors.card }]}
-                    onPress={() => handleVerbPress(verb)}
-                    activeOpacity={0.7}
-                  >
-                    <Ionicons name="heart" size={14} color={colors.accent} style={{ marginRight: spacing.sm }} />
-                    <View style={styles.listItemLeft}>
-                      <Text style={[styles.listItemVerb, { color: colors.textPrimary }]}>{verb}</Text>
-                    </View>
-                    <Text style={[styles.listItemTranslation, { color: colors.textSecondary }]} numberOfLines={1}>
-                      {data.translation}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
-              {favorites.length > 5 && (
-                <Text style={[styles.moreText, { color: colors.textMuted }]}>
-                  +{favorites.length - 5} more
-                </Text>
-              )}
+              <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>Favorites</Text>
+              {favorites.slice(0, 10).map((verb) => renderSwipeableRow(verb, 'favorite'))}
             </View>
           )}
 
           {/* Recent history */}
           {history.length > 0 && (
             <View style={styles.section}>
-              <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>최근 검색</Text>
-              {history.slice(0, 10).map((verb) => {
-                const data = (verbs as Record<string, VerbData>)[verb];
-                if (!data) return null;
-                return (
-                  <TouchableOpacity
-                    key={verb}
-                    style={[styles.listItem, { backgroundColor: colors.card }]}
-                    onPress={() => handleVerbPress(verb)}
-                    activeOpacity={0.7}
-                  >
-                    <View style={styles.listItemLeft}>
-                      <Text style={[styles.listItemVerb, { color: colors.textPrimary }]}>{verb}</Text>
-                    </View>
-                    <Text style={[styles.listItemTranslation, { color: colors.textSecondary }]} numberOfLines={1}>
-                      {data.translation}
-                    </Text>
-                    <TouchableOpacity
-                      onPress={() => removeFromHistory(verb)}
-                      hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                    >
-                      <Ionicons name="close" size={16} color={colors.textMuted} />
-                    </TouchableOpacity>
-                  </TouchableOpacity>
-                );
-              })}
+              <Text style={[styles.sectionTitle, { color: colors.textSecondary }]}>Recent</Text>
+              {history.slice(0, 10).map((verb) => renderSwipeableRow(verb, 'history'))}
             </View>
           )}
 
@@ -279,7 +370,8 @@ const styles = StyleSheet.create({
   resultLeft: { marginRight: spacing.md },
   resultVerb: { fontSize: fonts.sizes.xl, fontWeight: fonts.weights.bold },
   resultRight: { flex: 1, alignItems: 'flex-end' },
-  resultTranslation: { fontSize: fonts.sizes.sm, marginBottom: 4 },
+  resultTranslation: { fontSize: fonts.sizes.sm, marginBottom: 2 },
+  matchDetail: { fontSize: fonts.sizes.xs, fontStyle: 'italic', marginBottom: 4 },
   tagRow: { flexDirection: 'row', gap: spacing.xs },
   tag: { paddingHorizontal: 8, paddingVertical: 2, borderRadius: radius.full },
   tagText: { fontSize: fonts.sizes.xs, fontWeight: fonts.weights.medium },
@@ -298,16 +390,27 @@ const styles = StyleSheet.create({
   vodVerb: { fontSize: fonts.sizes.hero, fontWeight: fonts.weights.bold },
   vodTranslation: { fontSize: fonts.sizes.md, marginTop: spacing.sm },
   section: { marginTop: spacing.lg },
-  sectionTitle: { fontSize: fonts.sizes.sm, fontWeight: fonts.weights.semibold, marginBottom: spacing.sm },
-  listItem: {
+  sectionTitle: {
+    fontSize: fonts.sizes.sm,
+    fontWeight: fonts.weights.semibold,
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+    marginBottom: spacing.sm,
+  },
+  historyItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: spacing.md,
-    borderRadius: radius.sm,
-    marginBottom: spacing.xs,
+    paddingVertical: 14,
+    paddingHorizontal: spacing.md,
   },
-  listItemLeft: { marginRight: spacing.md },
-  listItemVerb: { fontSize: fonts.sizes.lg, fontWeight: fonts.weights.semibold },
-  listItemTranslation: { flex: 1, fontSize: fonts.sizes.sm },
-  moreText: { fontSize: fonts.sizes.xs, textAlign: 'center', marginTop: spacing.sm },
+  historyLeft: { marginRight: spacing.md },
+  historyVerb: { fontSize: fonts.sizes.lg, fontWeight: fonts.weights.semibold },
+  historyTranslation: { flex: 1, fontSize: fonts.sizes.sm },
+  emptyText: { textAlign: 'center', marginTop: spacing.xl, fontSize: fonts.sizes.md },
+  deleteAction: {
+    backgroundColor: '#E53935',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 80,
+  },
 });

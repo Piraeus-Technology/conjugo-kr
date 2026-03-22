@@ -40,7 +40,7 @@ interface Card {
 
 function generateCard(entries: [string, VerbData][]): Card {
   const verbEntries = entries.length > 0 ? entries : allVerbEntries;
-  const commonCount = Math.min(50, verbEntries.length);
+  const commonCount = Math.min(200, verbEntries.length);
   const idx = Math.random() < 0.7
     ? Math.floor(Math.random() * commonCount)
     : Math.floor(Math.random() * verbEntries.length);
