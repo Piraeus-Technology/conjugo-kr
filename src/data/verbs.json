@@ -4,7 +4,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "학교에 가다.", "en": "To go to school." }
+      {
+        "ko": "학교에 가다.",
+        "en": "To go to school."
+      }
     ]
   },
   "오다": {
@@ -12,7 +15,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "친구가 오다.", "en": "A friend comes." }
+      {
+        "ko": "친구가 오다.",
+        "en": "A friend comes."
+      }
     ]
   },
   "먹다": {
@@ -20,7 +26,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "밥을 먹다.", "en": "To eat rice." }
+      {
+        "ko": "밥을 먹다.",
+        "en": "To eat rice."
+      }
     ]
   },
   "마시다": {
@@ -28,7 +37,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "물을 마시다.", "en": "To drink water." }
+      {
+        "ko": "물을 마시다.",
+        "en": "To drink water."
+      }
     ]
   },
   "하다": {
@@ -36,7 +48,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "공부를 하다.", "en": "To study." }
+      {
+        "ko": "공부를 하다.",
+        "en": "To study."
+      }
     ]
   },
   "보다": {
@@ -44,7 +59,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "영화를 보다.", "en": "To watch a movie." }
+      {
+        "ko": "영화를 보다.",
+        "en": "To watch a movie."
+      }
     ]
   },
   "주다": {
@@ -52,7 +70,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "선물을 주다.", "en": "To give a gift." }
+      {
+        "ko": "선물을 주다.",
+        "en": "To give a gift."
+      }
     ]
   },
   "사다": {
@@ -60,7 +81,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "옷을 사다.", "en": "To buy clothes." }
+      {
+        "ko": "옷을 사다.",
+        "en": "To buy clothes."
+      }
     ]
   },
   "읽다": {
@@ -68,7 +92,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "책을 읽다.", "en": "To read a book." }
+      {
+        "ko": "책을 읽다.",
+        "en": "To read a book."
+      }
     ]
   },
   "쓰다": {
@@ -77,7 +104,10 @@
     "irregularType": "으",
     "topik": "1",
     "examples": [
-      { "ko": "편지를 쓰다.", "en": "To write a letter." }
+      {
+        "ko": "편지를 쓰다.",
+        "en": "To write a letter."
+      }
     ]
   },
   "자다": {
@@ -85,7 +115,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "일찍 자다.", "en": "To sleep early." }
+      {
+        "ko": "일찍 자다.",
+        "en": "To sleep early."
+      }
     ]
   },
   "일어나다": {
@@ -93,7 +126,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "아침에 일어나다.", "en": "To get up in the morning." }
+      {
+        "ko": "아침에 일어나다.",
+        "en": "To get up in the morning."
+      }
     ]
   },
   "앉다": {
@@ -101,7 +137,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "의자에 앉다.", "en": "To sit on a chair." }
+      {
+        "ko": "의자에 앉다.",
+        "en": "To sit on a chair."
+      }
     ]
   },
   "서다": {
@@ -115,7 +154,10 @@
     "irregularType": "ㄷ",
     "topik": "1",
     "examples": [
-      { "ko": "공원에서 걷다.", "en": "To walk in the park." }
+      {
+        "ko": "공원에서 걷다.",
+        "en": "To walk in the park."
+      }
     ]
   },
   "달리다": {
@@ -128,7 +170,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "한국어를 배우다.", "en": "To learn Korean." }
+      {
+        "ko": "한국어를 배우다.",
+        "en": "To learn Korean."
+      }
     ]
   },
   "가르치다": {
@@ -141,7 +186,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "한국어로 말하다.", "en": "To speak in Korean." }
+      {
+        "ko": "한국어로 말하다.",
+        "en": "To speak in Korean."
+      }
     ]
   },
   "듣다": {
@@ -150,7 +198,10 @@
     "irregularType": "ㄷ",
     "topik": "1",
     "examples": [
-      { "ko": "음악을 듣다.", "en": "To listen to music." }
+      {
+        "ko": "음악을 듣다.",
+        "en": "To listen to music."
+      }
     ]
   },
   "알다": {
@@ -158,7 +209,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "그 사람을 알다.", "en": "To know that person." }
+      {
+        "ko": "그 사람을 알다.",
+        "en": "To know that person."
+      }
     ]
   },
   "모르다": {
@@ -167,7 +221,10 @@
     "irregularType": "르",
     "topik": "1",
     "examples": [
-      { "ko": "길을 모르다.", "en": "To not know the way." }
+      {
+        "ko": "길을 모르다.",
+        "en": "To not know the way."
+      }
     ]
   },
   "좋아하다": {
@@ -175,7 +232,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "음악을 좋아하다.", "en": "To like music." }
+      {
+        "ko": "음악을 좋아하다.",
+        "en": "To like music."
+      }
     ]
   },
   "싫어하다": {
@@ -188,7 +248,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "친구를 만나다.", "en": "To meet a friend." }
+      {
+        "ko": "친구를 만나다.",
+        "en": "To meet a friend."
+      }
     ]
   },
   "기다리다": {
@@ -201,7 +264,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "서울에서 살다.", "en": "To live in Seoul." }
+      {
+        "ko": "서울에서 살다.",
+        "en": "To live in Seoul."
+      }
     ]
   },
   "죽다": {
@@ -214,7 +280,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "열심히 공부하다.", "en": "To study hard." }
+      {
+        "ko": "열심히 공부하다.",
+        "en": "To study hard."
+      }
     ]
   },
   "일하다": {
@@ -222,7 +291,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "회사에서 일하다.", "en": "To work at a company." }
+      {
+        "ko": "회사에서 일하다.",
+        "en": "To work at a company."
+      }
     ]
   },
   "놀다": {
@@ -235,7 +307,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "버스를 타다.", "en": "To ride the bus." }
+      {
+        "ko": "버스를 타다.",
+        "en": "To ride the bus."
+      }
     ]
   },
   "내리다": {
@@ -268,7 +343,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "음식을 만들다.", "en": "To make food." }
+      {
+        "ko": "음식을 만들다.",
+        "en": "To make food."
+      }
     ]
   },
   "놓다": {
@@ -291,7 +369,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "옷을 입다.", "en": "To wear clothes." }
+      {
+        "ko": "옷을 입다.",
+        "en": "To wear clothes."
+      }
     ]
   },
   "벗다": {
@@ -319,7 +400,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "날씨가 좋다.", "en": "The weather is good." }
+      {
+        "ko": "날씨가 좋다.",
+        "en": "The weather is good."
+      }
     ]
   },
   "나쁘다": {
@@ -354,7 +438,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "시간이 있다.", "en": "To have time." }
+      {
+        "ko": "시간이 있다.",
+        "en": "To have time."
+      }
     ]
   },
   "없다": {
@@ -362,7 +449,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "돈이 없다.", "en": "To not have money." }
+      {
+        "ko": "돈이 없다.",
+        "en": "To not have money."
+      }
     ]
   },
   "이다": {
@@ -370,7 +460,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "학생이다.", "en": "To be a student." }
+      {
+        "ko": "학생이다.",
+        "en": "To be a student."
+      }
     ]
   },
   "아니다": {
@@ -383,7 +476,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "의사가 되다.", "en": "To become a doctor." }
+      {
+        "ko": "의사가 되다.",
+        "en": "To become a doctor."
+      }
     ]
   },
   "예쁘다": {
@@ -398,7 +494,10 @@
     "irregularType": "ㅂ",
     "topik": "1",
     "examples": [
-      { "ko": "오늘 덥다.", "en": "It is hot today." }
+      {
+        "ko": "오늘 덥다.",
+        "en": "It is hot today."
+      }
     ]
   },
   "춥다": {
@@ -407,7 +506,10 @@
     "irregularType": "ㅂ",
     "topik": "1",
     "examples": [
-      { "ko": "겨울이 춥다.", "en": "Winter is cold." }
+      {
+        "ko": "겨울이 춥다.",
+        "en": "Winter is cold."
+      }
     ]
   },
   "맵다": {
@@ -428,7 +530,10 @@
     "irregularType": "ㅂ",
     "topik": "1",
     "examples": [
-      { "ko": "한국어가 어렵다.", "en": "Korean is difficult." }
+      {
+        "ko": "한국어가 어렵다.",
+        "en": "Korean is difficult."
+      }
     ]
   },
   "가깝다": {
@@ -587,7 +692,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "한국을 여행하다.", "en": "To travel Korea." }
+      {
+        "ko": "한국을 여행하다.",
+        "en": "To travel Korea."
+      }
     ]
   },
   "준비하다": {
@@ -625,7 +733,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "너를 사랑하다.", "en": "To love you." }
+      {
+        "ko": "너를 사랑하다.",
+        "en": "To love you."
+      }
     ]
   },
   "결혼하다": {
@@ -673,7 +784,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "깊이 생각하다.", "en": "To think deeply." }
+      {
+        "ko": "깊이 생각하다.",
+        "en": "To think deeply."
+      }
     ]
   },
   "느끼다": {
@@ -701,7 +815,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "선물을 받다.", "en": "To receive a gift." }
+      {
+        "ko": "선물을 받다.",
+        "en": "To receive a gift."
+      }
     ]
   },
   "보내다": {
@@ -809,7 +926,10 @@
     "regular": true,
     "topik": "1",
     "examples": [
-      { "ko": "이 음식이 맛있다.", "en": "This food is delicious." }
+      {
+        "ko": "이 음식이 맛있다.",
+        "en": "This food is delicious."
+      }
     ]
   },
   "맛없다": {
@@ -921,7 +1041,10 @@
     "regular": true,
     "topik": "2",
     "examples": [
-      { "ko": "나는 행복하다.", "en": "I am happy." }
+      {
+        "ko": "나는 행복하다.",
+        "en": "I am happy."
+      }
     ]
   },
   "편하다": {
@@ -1134,5 +1257,1534 @@
     "translation": "to hit/play (instrument)",
     "regular": true,
     "topik": "2"
+  },
+  "눕다": {
+    "translation": "to lie down",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "3",
+    "examples": [
+      {
+        "ko": "침대에 눕다.",
+        "en": "To lie down on the bed."
+      }
+    ]
+  },
+  "굽다": {
+    "translation": "to bake/roast/bend",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "3"
+  },
+  "반갑다": {
+    "translation": "to be glad (to meet)",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "1",
+    "examples": [
+      {
+        "ko": "만나서 반갑다.",
+        "en": "Nice to meet you."
+      }
+    ]
+  },
+  "밉다": {
+    "translation": "to be hateful/ugly",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "4"
+  },
+  "곱다": {
+    "translation": "to be fine/beautiful",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "4"
+  },
+  "귀엽다": {
+    "translation": "to be cute",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "2",
+    "examples": [
+      {
+        "ko": "강아지가 귀엽다.",
+        "en": "The puppy is cute."
+      }
+    ]
+  },
+  "부럽다": {
+    "translation": "to be envious",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "3"
+  },
+  "즐겁다": {
+    "translation": "to be enjoyable/fun",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "2"
+  },
+  "두렵다": {
+    "translation": "to be fearful",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "4"
+  },
+  "차갑다": {
+    "translation": "to be cold (to touch)",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "2"
+  },
+  "뜨겁다": {
+    "translation": "to be hot (to touch)",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "2"
+  },
+  "부드럽다": {
+    "translation": "to be soft/gentle",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "3"
+  },
+  "날카롭다": {
+    "translation": "to be sharp",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "5"
+  },
+  "외롭다": {
+    "translation": "to be lonely",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "3"
+  },
+  "그립다": {
+    "translation": "to miss (someone/something)",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "4"
+  },
+  "어지럽다": {
+    "translation": "to be dizzy/messy",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "4"
+  },
+  "고맙다": {
+    "translation": "to be thankful/grateful",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "1",
+    "examples": [
+      {
+        "ko": "도와줘서 고맙다.",
+        "en": "Thank you for helping."
+      }
+    ]
+  },
+  "깨닫다": {
+    "translation": "to realize",
+    "regular": false,
+    "irregularType": "ㄷ",
+    "topik": "4",
+    "examples": [
+      {
+        "ko": "실수를 깨닫다.",
+        "en": "To realize a mistake."
+      }
+    ]
+  },
+  "싣다": {
+    "translation": "to load/carry",
+    "regular": false,
+    "irregularType": "ㄷ",
+    "topik": "4"
+  },
+  "묻다": {
+    "translation": "to ask",
+    "regular": false,
+    "irregularType": "ㄷ",
+    "topik": "3",
+    "examples": [
+      {
+        "ko": "질문을 묻다.",
+        "en": "To ask a question."
+      }
+    ]
+  },
+  "붓다": {
+    "translation": "to pour/swell",
+    "regular": false,
+    "irregularType": "ㅅ",
+    "topik": "3"
+  },
+  "긋다": {
+    "translation": "to draw (a line)",
+    "regular": false,
+    "irregularType": "ㅅ",
+    "topik": "4"
+  },
+  "젓다": {
+    "translation": "to stir/shake",
+    "regular": false,
+    "irregularType": "ㅅ",
+    "topik": "4"
+  },
+  "뿌옇다": {
+    "translation": "to be hazy/blurry",
+    "regular": false,
+    "irregularType": "ㅎ",
+    "topik": "5"
+  },
+  "저렇다": {
+    "translation": "to be like that (over there)",
+    "regular": false,
+    "irregularType": "ㅎ",
+    "topik": "2"
+  },
+  "동그랗다": {
+    "translation": "to be round",
+    "regular": false,
+    "irregularType": "ㅎ",
+    "topik": "4"
+  },
+  "뚱뚱하다": {
+    "translation": "to be fat",
+    "regular": true,
+    "topik": "2"
+  },
+  "구르다": {
+    "translation": "to roll",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "4"
+  },
+  "마르다": {
+    "translation": "to dry/be thin",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "3",
+    "examples": [
+      {
+        "ko": "빨래가 마르다.",
+        "en": "The laundry dries."
+      }
+    ]
+  },
+  "이르다": {
+    "translation": "to be early/reach",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "4"
+  },
+  "기르다": {
+    "translation": "to raise/grow",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "3"
+  },
+  "나르다": {
+    "translation": "to carry/transport",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "4"
+  },
+  "서두르다": {
+    "translation": "to hurry",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "3"
+  },
+  "들르다": {
+    "translation": "to stop by/visit",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "3"
+  },
+  "가르다": {
+    "translation": "to split/divide",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "5"
+  },
+  "잠그다": {
+    "translation": "to lock",
+    "regular": false,
+    "irregularType": "으",
+    "topik": "3",
+    "examples": [
+      {
+        "ko": "문을 잠그다.",
+        "en": "To lock the door."
+      }
+    ]
+  },
+  "담그다": {
+    "translation": "to soak/immerse",
+    "regular": false,
+    "irregularType": "으",
+    "topik": "4"
+  },
+  "뜨다": {
+    "translation": "to float/rise",
+    "regular": false,
+    "irregularType": "으",
+    "topik": "3"
+  },
+  "잠기다": {
+    "translation": "to be locked/submerged",
+    "regular": true,
+    "topik": "4"
+  },
+  "모으다": {
+    "translation": "to gather/collect",
+    "regular": false,
+    "irregularType": "으",
+    "topik": "3"
+  },
+  "푸르다": {
+    "translation": "to be blue/green (nature)",
+    "regular": false,
+    "irregularType": "러",
+    "topik": "5"
+  },
+  "던지다": {
+    "translation": "to throw",
+    "regular": true,
+    "topik": "2"
+  },
+  "꺼내다": {
+    "translation": "to take out",
+    "regular": true,
+    "topik": "2"
+  },
+  "끝내다": {
+    "translation": "to finish (something)",
+    "regular": true,
+    "topik": "2"
+  },
+  "나누다": {
+    "translation": "to divide/share",
+    "regular": true,
+    "topik": "3"
+  },
+  "건너다": {
+    "translation": "to cross",
+    "regular": true,
+    "topik": "2"
+  },
+  "부탁하다": {
+    "translation": "to request/ask a favor",
+    "regular": true,
+    "topik": "2"
+  },
+  "실패하다": {
+    "translation": "to fail",
+    "regular": true,
+    "topik": "3"
+  },
+  "성공하다": {
+    "translation": "to succeed",
+    "regular": true,
+    "topik": "3"
+  },
+  "참여하다": {
+    "translation": "to participate",
+    "regular": true,
+    "topik": "4"
+  },
+  "경험하다": {
+    "translation": "to experience",
+    "regular": true,
+    "topik": "4"
+  },
+  "발전하다": {
+    "translation": "to develop/advance",
+    "regular": true,
+    "topik": "4"
+  },
+  "표현하다": {
+    "translation": "to express",
+    "regular": true,
+    "topik": "4"
+  },
+  "비교하다": {
+    "translation": "to compare",
+    "regular": true,
+    "topik": "4"
+  },
+  "연구하다": {
+    "translation": "to research",
+    "regular": true,
+    "topik": "4"
+  },
+  "관리하다": {
+    "translation": "to manage",
+    "regular": true,
+    "topik": "4"
+  },
+  "주장하다": {
+    "translation": "to insist/claim",
+    "regular": true,
+    "topik": "5"
+  },
+  "증가하다": {
+    "translation": "to increase",
+    "regular": true,
+    "topik": "5"
+  },
+  "감소하다": {
+    "translation": "to decrease",
+    "regular": true,
+    "topik": "5"
+  },
+  "유지하다": {
+    "translation": "to maintain",
+    "regular": true,
+    "topik": "5"
+  },
+  "제공하다": {
+    "translation": "to provide",
+    "regular": true,
+    "topik": "5"
+  },
+  "확인하다": {
+    "translation": "to confirm/check",
+    "regular": true,
+    "topik": "3"
+  },
+  "신청하다": {
+    "translation": "to apply (for)",
+    "regular": true,
+    "topik": "4"
+  },
+  "발표하다": {
+    "translation": "to announce/present",
+    "regular": true,
+    "topik": "4"
+  },
+  "존경하다": {
+    "translation": "to respect",
+    "regular": true,
+    "topik": "4"
+  },
+  "반대하다": {
+    "translation": "to oppose",
+    "regular": true,
+    "topik": "4"
+  },
+  "찬성하다": {
+    "translation": "to agree/approve",
+    "regular": true,
+    "topik": "4"
+  },
+  "해결하다": {
+    "translation": "to solve/resolve",
+    "regular": true,
+    "topik": "4"
+  },
+  "보호하다": {
+    "translation": "to protect",
+    "regular": true,
+    "topik": "4"
+  },
+  "존재하다": {
+    "translation": "to exist",
+    "regular": true,
+    "topik": "5"
+  },
+  "구별하다": {
+    "translation": "to distinguish",
+    "regular": true,
+    "topik": "5"
+  },
+  "판단하다": {
+    "translation": "to judge",
+    "regular": true,
+    "topik": "5"
+  },
+  "적용하다": {
+    "translation": "to apply (a rule/method)",
+    "regular": true,
+    "topik": "5"
+  },
+  "수행하다": {
+    "translation": "to carry out/perform",
+    "regular": true,
+    "topik": "6"
+  },
+  "구축하다": {
+    "translation": "to construct/build (a system)",
+    "regular": true,
+    "topik": "6"
+  },
+  "도출하다": {
+    "translation": "to derive/draw out",
+    "regular": true,
+    "topik": "6"
+  },
+  "지다": {
+    "translation": "to lose (a game)",
+    "regular": true,
+    "topik": "2"
+  },
+  "이기다": {
+    "translation": "to win",
+    "regular": true,
+    "topik": "2"
+  },
+  "싸우다": {
+    "translation": "to fight",
+    "regular": true,
+    "topik": "2"
+  },
+  "나다": {
+    "translation": "to occur/happen",
+    "regular": true,
+    "topik": "1"
+  },
+  "세다": {
+    "translation": "to count/be strong",
+    "regular": true,
+    "topik": "2"
+  },
+  "두다": {
+    "translation": "to put/place/leave",
+    "regular": true,
+    "topik": "2"
+  },
+  "쉬다": {
+    "translation": "to rest",
+    "regular": true,
+    "topik": "1",
+    "examples": [
+      {
+        "ko": "좀 쉬다.",
+        "en": "To rest a bit."
+      }
+    ]
+  },
+  "걸리다": {
+    "translation": "to take (time)/be caught",
+    "regular": true,
+    "topik": "2"
+  },
+  "걸다": {
+    "translation": "to hang/call (phone)",
+    "regular": true,
+    "topik": "2"
+  },
+  "끓이다": {
+    "translation": "to boil (something)",
+    "regular": true,
+    "topik": "2"
+  },
+  "볶다": {
+    "translation": "to stir-fry",
+    "regular": true,
+    "topik": "3"
+  },
+  "썰다": {
+    "translation": "to slice/chop",
+    "regular": true,
+    "topik": "3"
+  },
+  "데우다": {
+    "translation": "to heat up/warm",
+    "regular": true,
+    "topik": "3"
+  },
+  "튀기다": {
+    "translation": "to deep-fry",
+    "regular": true,
+    "topik": "4"
+  },
+  "익다": {
+    "translation": "to ripen/be cooked",
+    "regular": true,
+    "topik": "3"
+  },
+  "태우다": {
+    "translation": "to burn/give a ride",
+    "regular": true,
+    "topik": "3"
+  },
+  "지르다": {
+    "translation": "to shout/scream",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "4"
+  },
+  "뽑다": {
+    "translation": "to pull out/select",
+    "regular": true,
+    "topik": "3"
+  },
+  "빌다": {
+    "translation": "to pray/beg",
+    "regular": true,
+    "topik": "3"
+  },
+  "속하다": {
+    "translation": "to belong to",
+    "regular": true,
+    "topik": "4"
+  },
+  "숨기다": {
+    "translation": "to hide (something)",
+    "regular": true,
+    "topik": "3"
+  },
+  "숨다": {
+    "translation": "to hide (oneself)",
+    "regular": true,
+    "topik": "3"
+  },
+  "속이다": {
+    "translation": "to deceive",
+    "regular": true,
+    "topik": "4"
+  },
+  "고치다": {
+    "translation": "to fix/repair",
+    "regular": true,
+    "topik": "2"
+  },
+  "고장나다": {
+    "translation": "to break down (machine)",
+    "regular": true,
+    "topik": "2"
+  },
+  "부수다": {
+    "translation": "to break/smash",
+    "regular": true,
+    "topik": "4"
+  },
+  "깨다": {
+    "translation": "to wake up/break",
+    "regular": true,
+    "topik": "2"
+  },
+  "깨지다": {
+    "translation": "to be broken/shattered",
+    "regular": true,
+    "topik": "3"
+  },
+  "모이다": {
+    "translation": "to gather/assemble",
+    "regular": true,
+    "topik": "3"
+  },
+  "흔들다": {
+    "translation": "to shake/swing",
+    "regular": true,
+    "topik": "3"
+  },
+  "밀다": {
+    "translation": "to push",
+    "regular": true,
+    "topik": "2"
+  },
+  "당기다": {
+    "translation": "to pull",
+    "regular": true,
+    "topik": "2"
+  },
+  "쌓다": {
+    "translation": "to pile up/stack",
+    "regular": true,
+    "topik": "3"
+  },
+  "쌓이다": {
+    "translation": "to be piled up/accumulated",
+    "regular": true,
+    "topik": "3"
+  },
+  "섞다": {
+    "translation": "to mix",
+    "regular": true,
+    "topik": "3"
+  },
+  "채우다": {
+    "translation": "to fill",
+    "regular": true,
+    "topik": "3"
+  },
+  "비우다": {
+    "translation": "to empty",
+    "regular": true,
+    "topik": "3"
+  },
+  "말리다": {
+    "translation": "to dry (something)/stop someone",
+    "regular": true,
+    "topik": "3"
+  },
+  "지우다": {
+    "translation": "to erase",
+    "regular": true,
+    "topik": "2"
+  },
+  "가리키다": {
+    "translation": "to point at",
+    "regular": true,
+    "topik": "3"
+  },
+  "꾸미다": {
+    "translation": "to decorate/adorn",
+    "regular": true,
+    "topik": "3"
+  },
+  "감다": {
+    "translation": "to wash (hair)/close (eyes)",
+    "regular": true,
+    "topik": "2"
+  },
+  "신다": {
+    "translation": "to wear (shoes)",
+    "regular": true,
+    "topik": "1"
+  },
+  "달다": {
+    "translation": "to be sweet",
+    "regular": true,
+    "topik": "2"
+  },
+  "짜다": {
+    "translation": "to be salty",
+    "regular": true,
+    "topik": "2"
+  },
+  "시다": {
+    "translation": "to be sour",
+    "regular": true,
+    "topik": "3"
+  },
+  "싱겁다": {
+    "translation": "to be bland/tasteless",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "3"
+  },
+  "떨리다": {
+    "translation": "to tremble/shake",
+    "regular": true,
+    "topik": "3"
+  },
+  "지치다": {
+    "translation": "to be exhausted",
+    "regular": true,
+    "topik": "3"
+  },
+  "취하다": {
+    "translation": "to get drunk",
+    "regular": true,
+    "topik": "3"
+  },
+  "넘어지다": {
+    "translation": "to fall over",
+    "regular": true,
+    "topik": "2"
+  },
+  "미끄러지다": {
+    "translation": "to slip",
+    "regular": true,
+    "topik": "3"
+  },
+  "다치다": {
+    "translation": "to get hurt/injured",
+    "regular": true,
+    "topik": "2"
+  },
+  "심하다": {
+    "translation": "to be severe/extreme",
+    "regular": true,
+    "topik": "3"
+  },
+  "약하다": {
+    "translation": "to be weak",
+    "regular": true,
+    "topik": "3"
+  },
+  "강하다": {
+    "translation": "to be strong",
+    "regular": true,
+    "topik": "3"
+  },
+  "뚜렷하다": {
+    "translation": "to be clear/distinct",
+    "regular": true,
+    "topik": "5"
+  },
+  "복잡하다": {
+    "translation": "to be complicated",
+    "regular": true,
+    "topik": "3"
+  },
+  "간단하다": {
+    "translation": "to be simple",
+    "regular": true,
+    "topik": "3"
+  },
+  "정확하다": {
+    "translation": "to be accurate/exact",
+    "regular": true,
+    "topik": "4"
+  },
+  "불가능하다": {
+    "translation": "to be impossible",
+    "regular": true,
+    "topik": "4"
+  },
+  "익숙하다": {
+    "translation": "to be familiar/accustomed",
+    "regular": true,
+    "topik": "3"
+  },
+  "낯설다": {
+    "translation": "to be unfamiliar/strange",
+    "regular": true,
+    "topik": "4"
+  },
+  "솔직하다": {
+    "translation": "to be honest/frank",
+    "regular": true,
+    "topik": "4"
+  },
+  "겸손하다": {
+    "translation": "to be humble",
+    "regular": true,
+    "topik": "5"
+  },
+  "충분하다": {
+    "translation": "to be sufficient",
+    "regular": true,
+    "topik": "4"
+  },
+  "부족하다": {
+    "translation": "to be insufficient/lacking",
+    "regular": true,
+    "topik": "3"
+  },
+  "적절하다": {
+    "translation": "to be appropriate",
+    "regular": true,
+    "topik": "5"
+  },
+  "빛나다": {
+    "translation": "to shine",
+    "regular": true,
+    "topik": "3"
+  },
+  "흔하다": {
+    "translation": "to be common",
+    "regular": true,
+    "topik": "4"
+  },
+  "드물다": {
+    "translation": "to be rare",
+    "regular": true,
+    "topik": "5"
+  },
+  "분명하다": {
+    "translation": "to be obvious/clear",
+    "regular": true,
+    "topik": "4"
+  },
+  "애매하다": {
+    "translation": "to be ambiguous/vague",
+    "regular": true,
+    "topik": "5"
+  },
+  "화나다": {
+    "translation": "to be angry",
+    "regular": true,
+    "topik": "2"
+  },
+  "부끄럽다": {
+    "translation": "to be embarrassed/shy",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "3"
+  },
+  "답답하다": {
+    "translation": "to be frustrating/stuffy",
+    "regular": true,
+    "topik": "3"
+  },
+  "걱정되다": {
+    "translation": "to be worried",
+    "regular": true,
+    "topik": "2"
+  },
+  "심심하다": {
+    "translation": "to be bored",
+    "regular": true,
+    "topik": "2"
+  },
+  "무섭다": {
+    "translation": "to be scary/frightening",
+    "regular": false,
+    "irregularType": "ㅂ",
+    "topik": "2"
+  },
+  "억울하다": {
+    "translation": "to feel wronged/unjust",
+    "regular": true,
+    "topik": "4"
+  },
+  "후련하다": {
+    "translation": "to feel relieved",
+    "regular": true,
+    "topik": "4"
+  },
+  "든든하다": {
+    "translation": "to feel reassured/full",
+    "regular": true,
+    "topik": "4"
+  },
+  "설레다": {
+    "translation": "to be excited/flutter",
+    "regular": true,
+    "topik": "4"
+  },
+  "지루하다": {
+    "translation": "to be tedious/dull",
+    "regular": true,
+    "topik": "3"
+  },
+  "뻗다": {
+    "translation": "to stretch out/extend",
+    "regular": true,
+    "topik": "4"
+  },
+  "구하다": {
+    "translation": "to seek/rescue",
+    "regular": true,
+    "topik": "3"
+  },
+  "얻다": {
+    "translation": "to obtain/get",
+    "regular": true,
+    "topik": "3"
+  },
+  "버리다": {
+    "translation": "to throw away/discard",
+    "regular": true,
+    "topik": "2"
+  },
+  "돌리다": {
+    "translation": "to turn/spin",
+    "regular": true,
+    "topik": "3"
+  },
+  "키우다": {
+    "translation": "to raise/grow (something)",
+    "regular": true,
+    "topik": "2"
+  },
+  "줄이다": {
+    "translation": "to reduce/decrease",
+    "regular": true,
+    "topik": "3"
+  },
+  "늘리다": {
+    "translation": "to increase/extend",
+    "regular": true,
+    "topik": "3"
+  },
+  "늘다": {
+    "translation": "to increase/improve",
+    "regular": true,
+    "topik": "3"
+  },
+  "줄다": {
+    "translation": "to decrease/shrink",
+    "regular": true,
+    "topik": "3"
+  },
+  "녹다": {
+    "translation": "to melt",
+    "regular": true,
+    "topik": "3"
+  },
+  "얼다": {
+    "translation": "to freeze",
+    "regular": true,
+    "topik": "3"
+  },
+  "피다": {
+    "translation": "to bloom",
+    "regular": true,
+    "topik": "3"
+  },
+  "심다": {
+    "translation": "to plant",
+    "regular": true,
+    "topik": "3"
+  },
+  "자라다": {
+    "translation": "to grow up",
+    "regular": true,
+    "topik": "2"
+  },
+  "시키다": {
+    "translation": "to order/make someone do",
+    "regular": true,
+    "topik": "2"
+  },
+  "데려가다": {
+    "translation": "to take (someone) along",
+    "regular": true,
+    "topik": "3"
+  },
+  "데려오다": {
+    "translation": "to bring (someone)",
+    "regular": true,
+    "topik": "3"
+  },
+  "올리다": {
+    "translation": "to raise/upload",
+    "regular": true,
+    "topik": "2"
+  },
+  "내려놓다": {
+    "translation": "to put down",
+    "regular": true,
+    "topik": "3"
+  },
+  "가져가다": {
+    "translation": "to take (something) away",
+    "regular": true,
+    "topik": "2"
+  },
+  "가져오다": {
+    "translation": "to bring (something)",
+    "regular": true,
+    "topik": "2"
+  },
+  "갈아타다": {
+    "translation": "to transfer (transportation)",
+    "regular": true,
+    "topik": "2"
+  },
+  "지키다": {
+    "translation": "to protect/keep (a promise)",
+    "regular": true,
+    "topik": "3"
+  },
+  "나서다": {
+    "translation": "to step forward/volunteer",
+    "regular": true,
+    "topik": "4"
+  },
+  "물어보다": {
+    "translation": "to ask (a question)",
+    "regular": true,
+    "topik": "2"
+  },
+  "알아보다": {
+    "translation": "to look into/recognize",
+    "regular": true,
+    "topik": "3"
+  },
+  "돌아보다": {
+    "translation": "to look back",
+    "regular": true,
+    "topik": "3"
+  },
+  "떠나다": {
+    "translation": "to leave/depart",
+    "regular": true,
+    "topik": "2"
+  },
+  "떠오르다": {
+    "translation": "to come to mind/float up",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "4"
+  },
+  "다가오다": {
+    "translation": "to approach/come closer",
+    "regular": true,
+    "topik": "3"
+  },
+  "돌보다": {
+    "translation": "to take care of",
+    "regular": true,
+    "topik": "3"
+  },
+  "맡다": {
+    "translation": "to take charge of/smell",
+    "regular": true,
+    "topik": "3"
+  },
+  "꿈꾸다": {
+    "translation": "to dream",
+    "regular": true,
+    "topik": "3"
+  },
+  "탓하다": {
+    "translation": "to blame",
+    "regular": true,
+    "topik": "5"
+  },
+  "해치다": {
+    "translation": "to harm/damage",
+    "regular": true,
+    "topik": "5"
+  },
+  "무시하다": {
+    "translation": "to ignore/disregard",
+    "regular": true,
+    "topik": "4"
+  },
+  "방해하다": {
+    "translation": "to disturb/interfere",
+    "regular": true,
+    "topik": "4"
+  },
+  "거부하다": {
+    "translation": "to refuse/reject",
+    "regular": true,
+    "topik": "5"
+  },
+  "허락하다": {
+    "translation": "to permit/allow",
+    "regular": true,
+    "topik": "5"
+  },
+  "의미하다": {
+    "translation": "to mean/signify",
+    "regular": true,
+    "topik": "5"
+  },
+  "포함하다": {
+    "translation": "to include/contain",
+    "regular": true,
+    "topik": "5"
+  },
+  "기여하다": {
+    "translation": "to contribute",
+    "regular": true,
+    "topik": "6"
+  },
+  "직면하다": {
+    "translation": "to face/confront",
+    "regular": true,
+    "topik": "6"
+  },
+  "촉진하다": {
+    "translation": "to promote/facilitate",
+    "regular": true,
+    "topik": "6"
+  },
+  "위반하다": {
+    "translation": "to violate",
+    "regular": true,
+    "topik": "6"
+  },
+  "간주하다": {
+    "translation": "to regard/consider",
+    "regular": true,
+    "topik": "6"
+  },
+  "추구하다": {
+    "translation": "to pursue",
+    "regular": true,
+    "topik": "6"
+  },
+  "이루다": {
+    "translation": "to achieve/accomplish",
+    "regular": true,
+    "topik": "4"
+  },
+  "맞다": {
+    "translation": "to be correct/get hit",
+    "regular": true,
+    "topik": "1"
+  },
+  "틀리다": {
+    "translation": "to be wrong/different",
+    "regular": true,
+    "topik": "2"
+  },
+  "빠지다": {
+    "translation": "to fall into/be missing",
+    "regular": true,
+    "topik": "2"
+  },
+  "막다": {
+    "translation": "to block/prevent",
+    "regular": true,
+    "topik": "3"
+  },
+  "막히다": {
+    "translation": "to be blocked/congested",
+    "regular": true,
+    "topik": "3"
+  },
+  "풀다": {
+    "translation": "to untie/solve",
+    "regular": true,
+    "topik": "3"
+  },
+  "풀리다": {
+    "translation": "to be untied/resolved",
+    "regular": true,
+    "topik": "4"
+  },
+  "참다": {
+    "translation": "to endure/hold back",
+    "regular": true,
+    "topik": "3"
+  },
+  "견디다": {
+    "translation": "to endure/withstand",
+    "regular": true,
+    "topik": "4"
+  },
+  "펴다": {
+    "translation": "to spread out/unfold",
+    "regular": true,
+    "topik": "3"
+  },
+  "접다": {
+    "translation": "to fold",
+    "regular": true,
+    "topik": "3"
+  },
+  "누리다": {
+    "translation": "to enjoy/relish",
+    "regular": true,
+    "topik": "5"
+  },
+  "겪다": {
+    "translation": "to go through/experience",
+    "regular": true,
+    "topik": "4"
+  },
+  "미치다": {
+    "translation": "to go crazy/reach",
+    "regular": true,
+    "topik": "4"
+  },
+  "깎다": {
+    "translation": "to cut/peel/reduce price",
+    "regular": true,
+    "topik": "3"
+  },
+  "삶다": {
+    "translation": "to boil (food)",
+    "regular": true,
+    "topik": "3"
+  },
+  "찌다": {
+    "translation": "to steam/gain weight",
+    "regular": true,
+    "topik": "3"
+  },
+  "게으르다": {
+    "translation": "to be lazy",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "3"
+  },
+  "부지런하다": {
+    "translation": "to be diligent",
+    "regular": true,
+    "topik": "3"
+  },
+  "어색하다": {
+    "translation": "to be awkward",
+    "regular": true,
+    "topik": "4"
+  },
+  "신기하다": {
+    "translation": "to be amazing/novel",
+    "regular": true,
+    "topik": "3"
+  },
+  "한가하다": {
+    "translation": "to be free/not busy",
+    "regular": true,
+    "topik": "3"
+  },
+  "넉넉하다": {
+    "translation": "to be ample/generous",
+    "regular": true,
+    "topik": "4"
+  },
+  "급하다": {
+    "translation": "to be urgent/hasty",
+    "regular": true,
+    "topik": "3"
+  },
+  "단순하다": {
+    "translation": "to be simple/plain",
+    "regular": true,
+    "topik": "4"
+  },
+  "다양하다": {
+    "translation": "to be diverse/various",
+    "regular": true,
+    "topik": "4"
+  },
+  "독특하다": {
+    "translation": "to be unique",
+    "regular": true,
+    "topik": "4"
+  },
+  "뻔하다": {
+    "translation": "to be obvious",
+    "regular": true,
+    "topik": "4"
+  },
+  "수상하다": {
+    "translation": "to be suspicious",
+    "regular": true,
+    "topik": "5"
+  },
+  "현저하다": {
+    "translation": "to be remarkable/conspicuous",
+    "regular": true,
+    "topik": "6"
+  },
+  "미약하다": {
+    "translation": "to be faint/slight",
+    "regular": true,
+    "topik": "6"
+  },
+  "방대하다": {
+    "translation": "to be vast/enormous",
+    "regular": true,
+    "topik": "6"
+  },
+  "심오하다": {
+    "translation": "to be profound",
+    "regular": true,
+    "topik": "6"
+  },
+  "사귀다": {
+    "translation": "to make friends/date",
+    "regular": true,
+    "topik": "2"
+  },
+  "헤어지다": {
+    "translation": "to break up/part ways",
+    "regular": true,
+    "topik": "3"
+  },
+  "용서하다": {
+    "translation": "to forgive",
+    "regular": true,
+    "topik": "4"
+  },
+  "칭찬하다": {
+    "translation": "to praise/compliment",
+    "regular": true,
+    "topik": "3"
+  },
+  "꾸짖다": {
+    "translation": "to scold",
+    "regular": true,
+    "topik": "5"
+  },
+  "악쓰다": {
+    "translation": "to shout angrily",
+    "regular": true,
+    "topik": "5"
+  },
+  "외치다": {
+    "translation": "to shout/yell",
+    "regular": true,
+    "topik": "4"
+  },
+  "속삭이다": {
+    "translation": "to whisper",
+    "regular": true,
+    "topik": "5"
+  },
+  "쏟다": {
+    "translation": "to spill/pour out",
+    "regular": true,
+    "topik": "3"
+  },
+  "쏟아지다": {
+    "translation": "to pour down/overflow",
+    "regular": true,
+    "topik": "4"
+  },
+  "넘다": {
+    "translation": "to cross over/exceed",
+    "regular": true,
+    "topik": "2"
+  },
+  "넘기다": {
+    "translation": "to hand over/turn (page)",
+    "regular": true,
+    "topik": "3"
+  },
+  "놀리다": {
+    "translation": "to tease",
+    "regular": true,
+    "topik": "3"
+  },
+  "미루다": {
+    "translation": "to postpone/delay",
+    "regular": true,
+    "topik": "3"
+  },
+  "지내다": {
+    "translation": "to spend time/get along",
+    "regular": true,
+    "topik": "2"
+  },
+  "차리다": {
+    "translation": "to set (a table)/prepare",
+    "regular": true,
+    "topik": "3"
+  },
+  "치우다": {
+    "translation": "to clean up/clear away",
+    "regular": true,
+    "topik": "3"
+  },
+  "빼앗기다": {
+    "translation": "to be snatched/robbed of",
+    "regular": true,
+    "topik": "4"
+  },
+  "거르다": {
+    "translation": "to filter/skip (a meal)",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "4"
+  },
+  "저지르다": {
+    "translation": "to commit (a crime/mistake)",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "5"
+  },
+  "치르다": {
+    "translation": "to pay/undergo",
+    "regular": false,
+    "irregularType": "르",
+    "topik": "4"
+  },
+  "들이다": {
+    "translation": "to put in/spend (effort/money)",
+    "regular": true,
+    "topik": "4"
+  },
+  "뉘우치다": {
+    "translation": "to repent/feel remorse",
+    "regular": true,
+    "topik": "6"
+  },
+  "간과하다": {
+    "translation": "to overlook/disregard",
+    "regular": true,
+    "topik": "6"
+  },
+  "수반하다": {
+    "translation": "to accompany/entail",
+    "regular": true,
+    "topik": "6"
+  },
+  "귀결되다": {
+    "translation": "to result in/come down to",
+    "regular": true,
+    "topik": "6"
+  },
+  "전파하다": {
+    "translation": "to propagate/spread",
+    "regular": true,
+    "topik": "6"
+  },
+  "투자하다": {
+    "translation": "to invest",
+    "regular": true,
+    "topik": "4"
+  },
+  "소비하다": {
+    "translation": "to consume/spend",
+    "regular": true,
+    "topik": "4"
+  },
+  "생산하다": {
+    "translation": "to produce/manufacture",
+    "regular": true,
+    "topik": "5"
+  },
+  "수출하다": {
+    "translation": "to export",
+    "regular": true,
+    "topik": "5"
+  },
+  "수입하다": {
+    "translation": "to import",
+    "regular": true,
+    "topik": "5"
+  },
+  "졸리다": {
+    "translation": "to be sleepy",
+    "regular": true,
+    "topik": "2"
+  },
+  "남기다": {
+    "translation": "to leave behind/save",
+    "regular": true,
+    "topik": "3"
+  },
+  "남다": {
+    "translation": "to remain/be left",
+    "regular": true,
+    "topik": "2"
+  },
+  "뒤집다": {
+    "translation": "to flip/turn over",
+    "regular": true,
+    "topik": "4"
+  },
+  "쓸다": {
+    "translation": "to sweep",
+    "regular": true,
+    "topik": "3"
+  },
+  "잠들다": {
+    "translation": "to fall asleep",
+    "regular": true,
+    "topik": "2"
+  },
+  "깨우다": {
+    "translation": "to wake someone up",
+    "regular": true,
+    "topik": "3"
+  },
+  "노래하다": {
+    "translation": "to sing",
+    "regular": true,
+    "topik": "1"
+  },
+  "춤추다": {
+    "translation": "to dance",
+    "regular": true,
+    "topik": "2"
+  },
+  "노르다": {
+    "translation": "to be yellowish",
+    "regular": false,
+    "irregularType": "러",
+    "topik": "6"
+  },
+  "다다르다": {
+    "translation": "to reach/arrive at",
+    "regular": false,
+    "irregularType": "러",
+    "topik": "6"
   }
 }
