@@ -74,6 +74,7 @@ function generateQuestion(
 
   const wrongAnswers = new Set<string>();
 
+  // Strategy 1: Same verb, different forms (tests if user knows the right form)
   for (const f of activeForms) {
     if (f === form) continue;
     const wrong = conjugateReading(verb, data, f);
@@ -82,6 +83,21 @@ function generateQuestion(
     }
   }
 
+  // Strategy 2: Similar verbs in same form (tests if user knows the right verb)
+  // Prefer verbs with same regularity type for harder distractors
+  const similarVerbs = verbEntries.filter(([v, d]) =>
+    v !== verb && d.regular === data.regular
+  );
+  for (let i = 0; i < 10 && wrongAnswers.size < 6; i++) {
+    const pool = similarVerbs.length > 0 ? similarVerbs : verbEntries;
+    const [otherVerb, otherData] = pool[Math.floor(Math.random() * pool.length)];
+    const wrong = conjugateReading(otherVerb, otherData, form);
+    if (wrong !== correctAnswer) {
+      wrongAnswers.add(wrong);
+    }
+  }
+
+  // Strategy 3: Random verbs as fallback
   for (let i = 0; i < 20 && wrongAnswers.size < 6; i++) {
     const [otherVerb, otherData] = verbEntries[Math.floor(Math.random() * verbEntries.length)];
     const wrong = conjugateReading(otherVerb, otherData, form);
