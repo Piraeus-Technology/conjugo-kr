@@ -41,8 +41,11 @@ export default function ConjugationScreen() {
       {/* Header */}
       <View style={[styles.header, { backgroundColor: colors.card }]}>
         <View style={styles.headerTop}>
-          <View>
+          <View style={styles.verbRow}>
             <Text style={[styles.verb, { color: colors.primary }]}>{verb}</Text>
+            <TouchableOpacity onPress={() => speak(verb)} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+              <Ionicons name="volume-medium" size={22} color={colors.primary} />
+            </TouchableOpacity>
           </View>
           <TouchableOpacity onPress={() => toggleFavorite(verb)}>
             <Ionicons
@@ -63,9 +66,6 @@ export default function ConjugationScreen() {
           <View style={[styles.tag, { backgroundColor: colors.pillBg }]}>
             <Text style={[styles.tagText, { color: colors.textSecondary }]}>TOPIK {verbData.topik}</Text>
           </View>
-          <TouchableOpacity onPress={() => speak(verb)} style={styles.speakButton}>
-            <Ionicons name="volume-medium" size={20} color={colors.primary} />
-          </TouchableOpacity>
         </View>
       </View>
 
@@ -161,12 +161,12 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   headerTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
+  verbRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
   verb: { fontSize: fonts.sizes.hero, fontWeight: fonts.weights.bold },
   translation: { fontSize: fonts.sizes.lg, marginTop: spacing.md },
   metaRow: { flexDirection: 'row', alignItems: 'center', marginTop: spacing.md, gap: spacing.sm },
   tag: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: radius.full },
   tagText: { fontSize: fonts.sizes.xs, fontWeight: fonts.weights.medium },
-  speakButton: { marginLeft: 'auto' },
   groupSection: { marginTop: spacing.md, paddingHorizontal: spacing.md },
   groupTitle: {
     fontSize: fonts.sizes.sm,
