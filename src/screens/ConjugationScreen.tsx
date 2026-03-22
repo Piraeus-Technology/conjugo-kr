@@ -67,7 +67,7 @@ export default function ConjugationScreen() {
       {FORM_GROUPS.map((group) => (
         <View key={group.title} style={styles.groupSection}>
           <Text style={[styles.groupTitle, { color: colors.textSecondary }]}>
-            {group.title} ({group.titleKo})
+            {group.title}
           </Text>
           <View style={[styles.groupCard, { backgroundColor: colors.card }]}>
             {group.forms.map((form) => {
