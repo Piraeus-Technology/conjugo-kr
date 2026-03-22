@@ -4,7 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
 
 import verbs from '../data/verbs.json';
-import { useColors, fonts, spacing, radius } from '../utils/theme';
+import { useColors, fonts, spacing, radius, topikColors } from '../utils/theme';
+import { useThemeStore } from '../store/themeStore';
 import { useFavoritesStore } from '../store/favoritesStore';
 import { conjugate, FORM_GROUPS, VerbData } from '../utils/conjugate';
 import { speak } from '../utils/speech';
@@ -16,6 +17,7 @@ export default function ConjugationScreen() {
   const highlightForm: string | undefined = route.params?.highlightForm;
   const verbData = (verbs as Record<string, VerbData>)[verb];
   const { isFavorite, toggleFavorite, loadFavorites } = useFavoritesStore();
+  const isDark = useThemeStore((s) => s.isDark);
   const scrollRef = useRef<ScrollView>(null);
   const highlightY = useRef<number | null>(null);
   const highlightRef = useRef<View>(null);
@@ -63,8 +65,10 @@ export default function ConjugationScreen() {
               {verbData.irregularType ? ` (${verbData.irregularType})` : ''}
             </Text>
           </View>
-          <View style={[styles.tag, { backgroundColor: colors.pillBg }]}>
-            <Text style={[styles.tagText, { color: colors.textSecondary }]}>TOPIK {verbData.topik}</Text>
+          <View style={[styles.tag, { backgroundColor: isDark ? topikColors[verbData.topik]?.darkBg : topikColors[verbData.topik]?.bg }]}>
+            <Text style={[styles.tagText, { color: isDark ? topikColors[verbData.topik]?.darkText : topikColors[verbData.topik]?.text }]}>
+              TOPIK {verbData.topik}
+            </Text>
           </View>
         </View>
       </View>

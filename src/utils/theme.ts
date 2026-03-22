@@ -103,3 +103,13 @@ export const radius = {
   lg: 20,
   full: 999,
 };
+
+// TOPIK level colors — gradient from green (beginner) to red (advanced)
+export const topikColors: Record<string, { bg: string; text: string; darkBg: string; darkText: string }> = {
+  '1': { bg: '#E8F5E9', text: '#2E7D32', darkBg: '#1B3A1B', darkText: '#66BB6A' },
+  '2': { bg: '#E3F2FD', text: '#1565C0', darkBg: '#0D2137', darkText: '#64B5F6' },
+  '3': { bg: '#F3E5F5', text: '#7B1FA2', darkBg: '#2A1233', darkText: '#CE93D8' },
+  '4': { bg: '#FFF3E0', text: '#E65100', darkBg: '#3E2200', darkText: '#FFB74D' },
+  '5': { bg: '#FCE4EC', text: '#C62828', darkBg: '#3D1A1A', darkText: '#EF9A9A' },
+  '6': { bg: '#F3E5F5', text: '#4A148C', darkBg: '#1A0A2E', darkText: '#B39DDB' },
+};
