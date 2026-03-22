@@ -647,3 +647,38 @@ export function conjugate(verb: string, verbData: VerbData, form: ConjugationFor
 export function conjugateAll(verb: string, verbData: VerbData): ConjugationResult[] {
   return ALL_FORMS.map((form) => conjugate(verb, verbData, form));
 }
+
+// ──────────────────────── Conjugation Search Index ────────────────────────
+
+export interface ConjugationIndexEntry {
+  verb: string;
+  form: ConjugationForm;
+  conjugated: string;
+  translation: string;
+}
+
+let _conjugationIndex: ConjugationIndexEntry[] | null = null;
+
+/** Lazily build an index of all conjugated forms for reverse lookup */
+export function getConjugationIndex(verbsData: Record<string, VerbData>): ConjugationIndexEntry[] {
+  if (_conjugationIndex) return _conjugationIndex;
+
+  const quizForms: ConjugationForm[] = [
+    'present_polite', 'past_polite', 'future_polite',
+    'present_formal', 'past_formal',
+    'present_casual', 'past_casual',
+    'negative_polite', 'connective_and', 'connective_so',
+    'conditional', 'present_honorific',
+  ];
+
+  const entries: ConjugationIndexEntry[] = [];
+  for (const [verb, data] of Object.entries(verbsData)) {
+    for (const form of quizForms) {
+      const conjugated = conjugateReading(verb, data, form);
+      entries.push({ verb, form, conjugated, translation: data.translation });
+    }
+  }
+
+  _conjugationIndex = entries;
+  return entries;
+}
