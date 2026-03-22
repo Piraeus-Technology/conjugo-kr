@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
@@ -13,8 +13,13 @@ export default function ConjugationScreen() {
   const colors = useColors();
   const route = useRoute<any>();
   const verb: string = route.params.verb;
+  const highlightForm: string | undefined = route.params?.highlightForm;
   const verbData = (verbs as Record<string, VerbData>)[verb];
   const { isFavorite, toggleFavorite, loadFavorites } = useFavoritesStore();
+  const scrollRef = useRef<ScrollView>(null);
+  const highlightY = useRef<number | null>(null);
+  const highlightRef = useRef<View>(null);
+  const scrollContentRef = useRef<View>(null);
 
   React.useEffect(() => {
     loadFavorites();
@@ -31,7 +36,8 @@ export default function ConjugationScreen() {
   const typeLabel = verbData.regular ? '규칙' : '불규칙';
 
   return (
-    <ScrollView style={[styles.container, { backgroundColor: colors.bg }]}>
+    <ScrollView ref={scrollRef} style={[styles.container, { backgroundColor: colors.bg }]}>
+      <View ref={scrollContentRef}>
       {/* Header */}
       <View style={[styles.header, { backgroundColor: colors.card }]}>
         <View style={styles.headerTop}>
@@ -72,10 +78,29 @@ export default function ConjugationScreen() {
           <View style={[styles.groupCard, { backgroundColor: colors.card }]}>
             {group.forms.map((form) => {
               const result = conjugate(verb, verbData, form);
+              const isHighlighted = form === highlightForm && highlightForm !== 'dictionary';
               return (
                 <TouchableOpacity
                   key={form}
-                  style={[styles.formRow, { borderBottomColor: colors.divider }]}
+                  ref={isHighlighted ? highlightRef as any : undefined}
+                  onLayout={isHighlighted ? () => {
+                    setTimeout(() => {
+                      if (highlightRef.current && scrollContentRef.current) {
+                        highlightRef.current.measureLayout(
+                          scrollContentRef.current as any,
+                          (_x, y) => {
+                            scrollRef.current?.scrollTo({ y: Math.max(0, y - 150), animated: true });
+                          },
+                          () => {},
+                        );
+                      }
+                    }, 400);
+                  } : undefined}
+                  style={[
+                    styles.formRow,
+                    { borderBottomColor: colors.divider },
+                    isHighlighted && { backgroundColor: colors.primary + '15' },
+                  ]}
                   onPress={() => speak(result.value)}
                   activeOpacity={0.7}
                 >
@@ -118,6 +143,7 @@ export default function ConjugationScreen() {
       )}
 
       <View style={{ height: spacing.xl }} />
+      </View>
     </ScrollView>
   );
 }
